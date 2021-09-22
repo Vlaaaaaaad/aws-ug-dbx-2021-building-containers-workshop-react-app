@@ -1,0 +1,18 @@
+image: gitpod/workspace-full
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+tasks:
+  - init: |
+      npm ci
+    command: |
+      npm start
+
+  - command: ./assets/welcome.sh
+    openMode: split-right
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
